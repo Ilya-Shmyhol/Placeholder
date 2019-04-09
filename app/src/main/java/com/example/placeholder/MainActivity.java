@@ -1,17 +1,12 @@
 package com.example.placeholder;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.content.Intent;
-
-import android.app.Activity;
-import android.graphics.Color;
-
+import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -24,16 +19,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        login = (Button) findViewById(R.id.button);
-        username = (EditText) findViewById(R.id.username);
-        password = (EditText) findViewById(R.id.password);
-        click = (Button) findViewById(R.id.click);
+        login = findViewById(R.id.button);
+        username = findViewById(R.id.username);
+        password =  findViewById(R.id.password);
+        click = findViewById(R.id.click);
 
         login.setOnClickListener(new OnClickListener(){
             public void onClick(View v){
-                if(username.getText().toString().equals("username") &&
+                if(username.getText().toString().equals("admin") &&
                 password.getText().toString().equals("avocados")) {
-                    Toast.makeText(getApplicationContext(), "Redirecting...", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getApplicationContext(), "Redirecting...", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(MainActivity.this, TabFragments.class));
                 }
                 else{
